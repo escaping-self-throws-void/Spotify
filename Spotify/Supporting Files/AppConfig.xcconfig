@@ -1,0 +1,12 @@
+//
+//  AppConfig.xcconfig
+//  Spotify
+//
+//  Created by Paul Matar on 22/11/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// The base URL
+BASE_URL =
