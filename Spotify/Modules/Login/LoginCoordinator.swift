@@ -11,7 +11,7 @@ final class LoginCoordinator: BaseCoordinator {
     
     override func start() {
         let viewModel = LoginViewModelImpl()
-        let viewController = LoginViewController()
+        let viewController = LoginViewController(viewModel)
         navigationController.setViewControllers([viewController], animated: false)
     }
 }

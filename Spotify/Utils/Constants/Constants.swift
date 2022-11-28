@@ -13,7 +13,7 @@ enum C {
     }
     
     enum Images {
-
+        static let spotify = "spotifyIcon"
     }
     
     enum Colors {
@@ -21,6 +21,7 @@ enum C {
     }
     
     enum Text {
-
+        static let millionsOfSongs = "Millions of songs.\n Free on Spotify."
+        static let login = "Login with Spotify"
     }
 }

@@ -8,9 +8,11 @@
 import Foundation
  
 protocol LoginViewModel {
-    
+    func loginWithSpotify()
 }
 
 final class LoginViewModelImpl: LoginViewModel {
-    
+    func loginWithSpotify() {
+        print("login")
+    }
 }
