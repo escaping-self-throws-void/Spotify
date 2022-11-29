@@ -20,6 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
+        
+        AuthManager.shared.refreshAccessToken { success in
+            print(success)
+        }
     }
 }
 

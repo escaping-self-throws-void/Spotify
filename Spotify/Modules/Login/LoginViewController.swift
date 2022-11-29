@@ -42,6 +42,22 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
 
     private func loginPressed() {
-        viewModel.loginWithSpotify()
+        let url = AuthManager.shared.signInURL
+
+        let vc = AuthViewController()
+        vc.completionHandler = { [weak self] success in
+            DispatchQueue.main.async {
+                self?.handleSignIn(success: success)
+            }
+        }
+        present(vc, animated: true)
+    }
+}
+
+extension LoginViewController {
+    private func handleSignIn(success: Bool) {
+        guard success else {
+            return
+        }
     }
 }
