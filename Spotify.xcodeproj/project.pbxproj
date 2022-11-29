@@ -173,6 +173,7 @@
 		CFBF2D48292D5B9800C1514E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CFED7C20293692DC005F30C9 /* AuthManager */,
 				CFBF2D49292D5BAE00C1514E /* Network Service */,
 				CFBF2D4A292D5BCA00C1514E /* API Service */,
 				CFBF2D4B292D5BDA00C1514E /* Image Service */,
@@ -204,6 +205,13 @@
 				CFBF2D4E292D5C3900C1514E /* ImageCache.swift */,
 			);
 			path = "Image Service";
+			sourceTree = "<group>";
+		};
+		CFED7C20293692DC005F30C9 /* AuthManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AuthManager;
 			sourceTree = "<group>";
 		};
 		CFEF5DEB29353AAF00DED87C /* UI */ = {
@@ -464,8 +472,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pmatar.Spotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -503,8 +511,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pmatar.Spotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
