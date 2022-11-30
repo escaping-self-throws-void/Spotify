@@ -10,16 +10,24 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let scene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: scene)
-        self.window = window
-        window.overrideUserInterfaceStyle = .light
         
-        appCoordinator = AppCoordinator(window: window)
-        appCoordinator?.start()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        window?.makeKeyAndVisible()
+        
+        
+        if AuthManager.shared.isSignedIn {
+            let vm = SearchViewModelImpl()
+            let vc = SearchViewController(vm)
+            let navVC = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navVC
+        } else {
+            let vc = LoginViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navVC
+        }
         
         AuthManager.shared.refreshAccessToken { success in
             debugPrint(success)

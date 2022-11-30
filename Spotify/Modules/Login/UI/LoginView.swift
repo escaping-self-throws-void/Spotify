@@ -46,7 +46,7 @@ final class LoginView: UIView {
         return bttn
     }()
     
-    var onButtonClick: (() -> Void)?
+    var onButtonClick: VoidClosure?
     
     override func layoutSubviews() {
         super.layoutSubviews()
