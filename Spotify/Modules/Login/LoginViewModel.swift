@@ -13,6 +13,6 @@ protocol LoginViewModel {
 
 final class LoginViewModelImpl: LoginViewModel {
     func loginWithSpotify() {
-        print("login")
+        debugPrint("login")
     }
 }

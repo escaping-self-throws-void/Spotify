@@ -23,9 +23,11 @@
 		CFBF2D55292D5DA000C1514E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF2D54292D5DA000C1514E /* Endpoint.swift */; };
 		CFBF2D57292D5EDA00C1514E /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF2D56292D5EDA00C1514E /* LoginCoordinator.swift */; };
 		CFBF2D59292D5EE800C1514E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBF2D58292D5EE800C1514E /* LoginViewModel.swift */; };
-		CFED7C2229369301005F30C9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C2129369301005F30C9 /* AuthManager.swift */; };
 		CFED7C242936942C005F30C9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C232936942C005F30C9 /* AuthViewController.swift */; };
 		CFED7C262936A891005F30C9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C252936A891005F30C9 /* AuthResponse.swift */; };
+		CFED7C292937DEAD005F30C9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C282937DEAD005F30C9 /* SearchViewController.swift */; };
+		CFED7C2B2937DEB9005F30C9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */; };
+		CFED7C2E2937DED3005F30C9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C2D2937DED3005F30C9 /* SearchView.swift */; };
 		CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF5DEC29353ABB00DED87C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,9 +51,11 @@
 		CFBF2D56292D5EDA00C1514E /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		CFBF2D58292D5EE800C1514E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CFE08DF3292D620D00665644 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
-		CFED7C2129369301005F30C9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		CFED7C232936942C005F30C9 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CFED7C252936A891005F30C9 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		CFED7C282937DEAD005F30C9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CFED7C2D2937DED3005F30C9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CFEF5DEC29353ABB00DED87C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				CFBF2D3A292D4E2A00C1514E /* Login */,
+				CFED7C272937DE80005F30C9 /* Search */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -217,10 +222,27 @@
 		CFED7C20293692DC005F30C9 /* AuthManager */ = {
 			isa = PBXGroup;
 			children = (
-				CFED7C2129369301005F30C9 /* AuthManager.swift */,
 				CFED7C232936942C005F30C9 /* AuthViewController.swift */,
 			);
 			path = AuthManager;
+			sourceTree = "<group>";
+		};
+		CFED7C272937DE80005F30C9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C2C2937DEC9005F30C9 /* UI */,
+				CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */,
+				CFED7C282937DEAD005F30C9 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CFED7C2C2937DEC9005F30C9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C2D2937DED3005F30C9 /* SearchView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		CFEF5DEB29353AAF00DED87C /* UI */ = {
@@ -306,14 +328,16 @@
 				CFBF2D3C292D4F4700C1514E /* BaseCoordinator.swift in Sources */,
 				CFBF2D42292D506A00C1514E /* AutoLayoutDSL.swift in Sources */,
 				CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */,
+				CFED7C292937DEAD005F30C9 /* SearchViewController.swift in Sources */,
 				CFED7C262936A891005F30C9 /* AuthResponse.swift in Sources */,
+				CFED7C2B2937DEB9005F30C9 /* SearchViewModel.swift in Sources */,
 				CFBF2D53292D5D9700C1514E /* RequestError.swift in Sources */,
 				CFBF2D57292D5EDA00C1514E /* LoginCoordinator.swift in Sources */,
 				CFBF2D4F292D5C3900C1514E /* ImageCache.swift in Sources */,
+				CFED7C2E2937DED3005F30C9 /* SearchView.swift in Sources */,
 				CFBF2D59292D5EE800C1514E /* LoginViewModel.swift in Sources */,
 				CFBF2D28292D4BFC00C1514E /* LoginViewController.swift in Sources */,
 				CFED7C242936942C005F30C9 /* AuthViewController.swift in Sources */,
-				CFED7C2229369301005F30C9 /* AuthManager.swift in Sources */,
 				CFBF2D46292D5AE200C1514E /* Constants.swift in Sources */,
 				CFBF2D51292D5D8C00C1514E /* HTTPClient.swift in Sources */,
 				CFBF2D24292D4BFC00C1514E /* AppDelegate.swift in Sources */,

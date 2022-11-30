@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appCoordinator?.start()
         
         AuthManager.shared.refreshAccessToken { success in
-            print(success)
+            debugPrint(success)
         }
     }
 }

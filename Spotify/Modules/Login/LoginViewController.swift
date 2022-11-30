@@ -42,10 +42,8 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
 
     private func loginPressed() {
-        let url = AuthManager.shared.signInURL
-
-        let vc = AuthViewController()
-        vc.completionHandler = { [weak self] success in
+        guard let url = AuthManager.shared.signInURL else { return }
+        let vc = AuthViewController(url: url) { [weak self] success in
             DispatchQueue.main.async {
                 self?.handleSignIn(success: success)
             }
