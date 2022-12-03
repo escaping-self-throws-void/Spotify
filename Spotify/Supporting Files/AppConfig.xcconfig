@@ -9,4 +9,7 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // The base URL
-BASE_URL =
+BASE_URL = api.spotify.com/v1
+AUTH_URL = accounts.spotify.com
+CLIENT_ID = 43137cab5cb4419fb7fe9ecb277dc9f9
+CLIENT_SECRET = 2597274733c34e469f780c584f5c2970

@@ -38,7 +38,7 @@ extension LoginViewController {
 // MARK: - Private methods
 extension LoginViewController {
     private func handleCompletion() {
-        let vm = SearchViewModelImpl()
+        let vm = SearchViewModelImpl(service: ApiService())
         let vc = SearchViewController(vm)
         navigationController?.pushViewController(vc, animated: false)
     }

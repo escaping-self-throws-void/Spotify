@@ -50,10 +50,10 @@ final class LoginView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        initialize()
+        layoutViews()
     }
     
-    private func initialize() {
+    private func layoutViews() {
         icon.pin(
             .fixedWidth(50),
             .fixedHeight(50)

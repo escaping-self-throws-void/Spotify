@@ -8,20 +8,23 @@
 import Foundation
 
 enum C {
-    enum Fonts {
-
-    }
-    
     enum Images {
         static let spotify = "spotifyIcon"
-    }
-    
-    enum Colors {
-
+        static let fullStar = "star.fill"
+        static let halfStar = "star.lefthalf.fill"
+        static let emptyStar = "star"
+        static let placeholder = "placeholder"
     }
     
     enum Text {
         static let millionsOfSongs = "Millions of songs.\n Free on Spotify."
         static let login = "Login with Spotify"
+        static let searchPlaceholder = "Search for an artist..."
+    }
+    
+    enum Memory {
+        static let accessToken = "accessToken"
+        static let refreshToken = "refreshToken"
+        static let expirationDate = "expirationDate"
     }
 }

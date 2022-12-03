@@ -16,10 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = .dark
         
-        
+        configureUI()
+
         if AuthManager.shared.isSignedIn {
-            let vm = SearchViewModelImpl()
+            let vm = SearchViewModelImpl(service: ApiService())
             let vc = SearchViewController(vm)
             let navVC = UINavigationController(rootViewController: vc)
             window?.rootViewController = navVC
@@ -32,6 +34,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         AuthManager.shared.refreshAccessToken { success in
             debugPrint(success)
         }
+    }
+    
+    private func configureUI() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+         navigationBarAppearance.configureWithOpaqueBackground()
+         navigationBarAppearance.titleTextAttributes = [
+             .foregroundColor : UIColor.white
+         ]
+         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
 }
 
