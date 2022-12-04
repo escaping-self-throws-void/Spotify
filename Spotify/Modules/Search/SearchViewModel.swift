@@ -12,7 +12,6 @@ protocol SearchViewModel {
     var artists: [ArtistModel] { get }
     
     func getArtists(by name: String)
-    func goToDetails(_ data: Any)
 }
 
 final class SearchViewModelImpl: SearchViewModel {
@@ -28,17 +27,14 @@ final class SearchViewModelImpl: SearchViewModel {
     func getArtists(by name: String) {
         Task {
             do {
-                try await Task.sleep(nanoseconds: 500_000_000)
-                let fetchedData = try await service.fetchArtists(by: name)
+                try await Task.sleep(nanoseconds: 300_000_000)
+                let fetchedData = try await service.fetchArtists(by: name.trimmed)
                 mapModels(fetchedData)
                 refresh.send(true)
             } catch {
                 debugPrint(error)
             }
         }
-    }
-    
-    func goToDetails(_ data: Any) {
     }
     
     private func mapModels(_ data: [ArtistsItem]) {

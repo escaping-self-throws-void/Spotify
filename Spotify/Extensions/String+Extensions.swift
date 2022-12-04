@@ -9,6 +9,12 @@ import Foundation
 
 extension String {
     var base64: String {
-        data(using: .utf8)?.base64EncodedString() ?? ""
+        data(using: .utf8)?
+            .base64EncodedString() ?? ""
+    }
+    
+    var trimmed: String {
+        components(separatedBy: .whitespacesAndNewlines)
+            .joined()
     }
 }

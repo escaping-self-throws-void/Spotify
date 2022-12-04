@@ -5,7 +5,7 @@
 //  Created by Paul Matar on 03/12/2022.
 //
 
-import UIKit
+import Foundation
 
 struct ArtistModel: Hashable {
     let id: String

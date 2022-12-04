@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataContainer: Codable {
+struct ArtistsContainer: Codable {
     let artists: Artists
 }
 

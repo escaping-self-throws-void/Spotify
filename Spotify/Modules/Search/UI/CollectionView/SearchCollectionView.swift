@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchCollectionView: UICollectionView {
+final class SpotifyCollectionView: UICollectionView {
 
     private let searchLayout: UICollectionViewCompositionalLayout = {
 
@@ -39,10 +39,15 @@ final class SearchCollectionView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: searchLayout)
-        self.keyboardDismissMode = .onDrag
+        initialize()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func initialize() {
+        keyboardDismissMode = .onDrag
+        backgroundColor = .clear
     }
 }

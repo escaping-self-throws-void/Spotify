@@ -37,7 +37,12 @@
 		CFED7C4F293BCA6F005F30C9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */; };
 		CFED7C51293BD465005F30C9 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C50293BD465005F30C9 /* AuthEndpoint.swift */; };
 		CFED7C53293BF442005F30C9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C52293BF442005F30C9 /* String+Extensions.swift */; };
-		CFED7C55293C0D84005F30C9 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C54293C0D84005F30C9 /* UIViewController+Extensions.swift */; };
+		CFED7C58293C953A005F30C9 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C57293C953A005F30C9 /* AlbumsViewController.swift */; };
+		CFED7C5A293C95BA005F30C9 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C59293C95BA005F30C9 /* AlbumsViewModel.swift */; };
+		CFED7C5E293C9659005F30C9 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C5D293C9659005F30C9 /* AlbumCell.swift */; };
+		CFED7C60293C9687005F30C9 /* AlbumCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C5F293C9687005F30C9 /* AlbumCellView.swift */; };
+		CFED7C62293C96AF005F30C9 /* AlbumUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C61293C96AF005F30C9 /* AlbumUIModel.swift */; };
+		CFED7C64293C9816005F30C9 /* AlbumsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C63293C9816005F30C9 /* AlbumsItem.swift */; };
 		CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF5DEC29353ABB00DED87C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +80,12 @@
 		CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CFED7C50293BD465005F30C9 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		CFED7C52293BF442005F30C9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		CFED7C54293C0D84005F30C9 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CFED7C57293C953A005F30C9 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		CFED7C59293C95BA005F30C9 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		CFED7C5D293C9659005F30C9 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		CFED7C5F293C9687005F30C9 /* AlbumCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellView.swift; sourceTree = "<group>"; };
+		CFED7C61293C96AF005F30C9 /* AlbumUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUIModel.swift; sourceTree = "<group>"; };
+		CFED7C63293C9816005F30C9 /* AlbumsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsItem.swift; sourceTree = "<group>"; };
 		CFEF5DEC29353ABB00DED87C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +148,7 @@
 				CFED7C332937FAEA005F30C9 /* WebView */,
 				CFBF2D3A292D4E2A00C1514E /* Login */,
 				CFED7C272937DE80005F30C9 /* Search */,
+				CFED7C56293C8754005F30C9 /* Albums */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -191,6 +202,7 @@
 			children = (
 				CFED7C252936A891005F30C9 /* AuthResponse.swift */,
 				CFED7C45293BA158005F30C9 /* ArtistsItem.swift */,
+				CFED7C63293C9816005F30C9 /* AlbumsItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CFED7C2C2937DEC9005F30C9 /* UI */,
+				CFED7C3A293B85BF005F30C9 /* Cell */,
 				CFED7C47293BB8EF005F30C9 /* SearchUIModel.swift */,
 				CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */,
 				CFED7C282937DEAD005F30C9 /* SearchViewController.swift */,
@@ -274,8 +287,8 @@
 		CFED7C37293B855A005F30C9 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				CFED7C3A293B85BF005F30C9 /* Cell */,
 				CFED7C38293B8577005F30C9 /* SearchCollectionView.swift */,
+				CFED7C40293B9817005F30C9 /* SearchCellView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -284,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				CFED7C3B293B85E5005F30C9 /* SearchCell.swift */,
-				CFED7C40293B9817005F30C9 /* SearchCellView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -310,9 +322,36 @@
 			children = (
 				CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */,
 				CFED7C52293BF442005F30C9 /* String+Extensions.swift */,
-				CFED7C54293C0D84005F30C9 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFED7C56293C8754005F30C9 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C5B293C9630005F30C9 /* UI */,
+				CFED7C5C293C9643005F30C9 /* Cell */,
+				CFED7C61293C96AF005F30C9 /* AlbumUIModel.swift */,
+				CFED7C59293C95BA005F30C9 /* AlbumsViewModel.swift */,
+				CFED7C57293C953A005F30C9 /* AlbumsViewController.swift */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		CFED7C5B293C9630005F30C9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C5F293C9687005F30C9 /* AlbumCellView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CFED7C5C293C9643005F30C9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C5D293C9659005F30C9 /* AlbumCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CFEF5DEB29353AAF00DED87C /* UI */ = {
@@ -399,27 +438,32 @@
 				CFBF2D42292D506A00C1514E /* AutoLayoutDSL.swift in Sources */,
 				CFED7C4F293BCA6F005F30C9 /* UIImageView+Extensions.swift in Sources */,
 				CFED7C4C293BC6D3005F30C9 /* ApiEndpoint.swift in Sources */,
+				CFED7C60293C9687005F30C9 /* AlbumCellView.swift in Sources */,
 				CFED7C48293BB8EF005F30C9 /* SearchUIModel.swift in Sources */,
+				CFED7C62293C96AF005F30C9 /* AlbumUIModel.swift in Sources */,
 				CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */,
 				CFED7C292937DEAD005F30C9 /* SearchViewController.swift in Sources */,
 				CFED7C51293BD465005F30C9 /* AuthEndpoint.swift in Sources */,
 				CFED7C262936A891005F30C9 /* AuthResponse.swift in Sources */,
 				CFED7C2B2937DEB9005F30C9 /* SearchViewModel.swift in Sources */,
+				CFED7C64293C9816005F30C9 /* AlbumsItem.swift in Sources */,
 				CFBF2D53292D5D9700C1514E /* RequestError.swift in Sources */,
 				CFBF2D4F292D5C3900C1514E /* ImageCache.swift in Sources */,
 				CFBF2D28292D4BFC00C1514E /* LoginViewController.swift in Sources */,
+				CFED7C58293C953A005F30C9 /* AlbumsViewController.swift in Sources */,
 				CFED7C242936942C005F30C9 /* WebViewController.swift in Sources */,
 				CFED7C3529380162005F30C9 /* Typealias.swift in Sources */,
 				CFBF2D46292D5AE200C1514E /* Constants.swift in Sources */,
 				CFED7C44293B9A86005F30C9 /* StarRatingView.swift in Sources */,
+				CFED7C5A293C95BA005F30C9 /* AlbumsViewModel.swift in Sources */,
 				CFBF2D51292D5D8C00C1514E /* HTTPClient.swift in Sources */,
 				CFED7C4A293BC6BA005F30C9 /* ApiService.swift in Sources */,
 				CFED7C46293BA158005F30C9 /* ArtistsItem.swift in Sources */,
 				CFED7C3F293B86C4005F30C9 /* CompositionalLayout.swift in Sources */,
-				CFED7C55293C0D84005F30C9 /* UIViewController+Extensions.swift in Sources */,
 				CFBF2D24292D4BFC00C1514E /* AppDelegate.swift in Sources */,
 				CFED7C39293B8577005F30C9 /* SearchCollectionView.swift in Sources */,
 				CFED7C53293BF442005F30C9 /* String+Extensions.swift in Sources */,
+				CFED7C5E293C9659005F30C9 /* AlbumCell.swift in Sources */,
 				CFBF2D4D292D5C1800C1514E /* ImageLoader.swift in Sources */,
 				CFBF2D55292D5DA000C1514E /* Endpoint.swift in Sources */,
 				CFBF2D26292D4BFC00C1514E /* SceneDelegate.swift in Sources */,

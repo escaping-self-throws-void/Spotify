@@ -1,16 +1,16 @@
 //
-//  SearchViewController.swift
+//  AlbumsViewController.swift
 //  Spotify
 //
-//  Created by Paul Matar on 30/11/2022.
+//  Created by Paul Matar on 04/12/2022.
 //
 
 import UIKit
 import Combine
 
-final class SearchViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
     
-    private let viewModel: SearchViewModel
+    private let viewModel: AlbumsViewModel
 
     private let collectionView = SpotifyCollectionView()
     
@@ -18,7 +18,7 @@ final class SearchViewController: UIViewController {
 
     private var cancellables = Set<AnyCancellable>()
     
-    init(_ viewModel: SearchViewModel) {
+    init(_ viewModel: AlbumsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,13 +45,9 @@ final class SearchViewController: UIViewController {
 }
 
 // MARK: - Private methods
-extension SearchViewController {
+extension AlbumsViewController {
     private func setupNavigationBar() {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = C.Text.searchPlaceholder
-        searchBar.delegate = self
-        navigationItem.hidesBackButton = true
-        navigationItem.titleView = searchBar
+
     }
     
     private func layoutViews() {
@@ -71,60 +67,41 @@ extension SearchViewController {
             }
             .store(in: &cancellables)
     }
-    
-    private func openAlbumsScreen(_ id: String) {
-        let vm = AlbumsViewModelImpl(service: ApiService(), id: id)
-        let vc = AlbumsViewController(vm)
-    }
-}
-
-// MARK: - UISearchBarDelegate
-extension SearchViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
-        guard !textSearched.isEmpty else { return }
-        viewModel.getArtists(by: textSearched)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
-    }
 }
 
 // MARK: - UICollectionViewDelegate
-extension SearchViewController: UICollectionViewDelegate {
+extension AlbumsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: false)
-        guard let artist = dataSource.itemIdentifier(for: indexPath) else { return }
-        openAlbumsScreen(artist.id)
+
     }
 }
 
 // MARK: - Diffable Data Source Setup
-extension SearchViewController {
+extension AlbumsViewController {
     
-    fileprivate typealias SearchDataSource = UICollectionViewDiffableDataSource<Section, ArtistModel>
-    fileprivate typealias SearchSnapshot = NSDiffableDataSourceSnapshot<Section, ArtistModel>
+    fileprivate typealias AlbumsDataSource = UICollectionViewDiffableDataSource<Section, AlbumModel>
+    fileprivate typealias AlbumsSnapshot = NSDiffableDataSourceSnapshot<Section, AlbumModel>
 
     fileprivate enum Section {
         case main
     }
     
-    private func configureDataSource() -> SearchDataSource {
-        let cellRegistration = UICollectionView.CellRegistration<SearchCell, ArtistModel> { cell, _, model in
+    private func configureDataSource() -> AlbumsDataSource {
+        let cellRegistration = UICollectionView.CellRegistration<AlbumCell, AlbumModel> { cell, _, model in
             cell.configure(with: model)
         }
         
-        return SearchDataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
+        return AlbumsDataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
     }
     
     private func createSnapshot() {
-        var snapshot = SearchSnapshot()
+        var snapshot = AlbumsSnapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(viewModel.artists)
+        snapshot.appendItems(viewModel.albums)
         
         dataSource.apply(snapshot)
     }
 }
+

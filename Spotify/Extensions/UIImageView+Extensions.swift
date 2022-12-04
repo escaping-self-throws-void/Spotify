@@ -8,8 +8,9 @@
 import UIKit
 
 extension UIImageView {
+    @MainActor
     func loadFrom(url: String) {
-        Task { @MainActor in
+        Task {
             do {
                 let loadedImage = try await ImageLoader.shared.downloadImage(from: url)
                 image = loadedImage
