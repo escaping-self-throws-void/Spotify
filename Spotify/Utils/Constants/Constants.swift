@@ -20,6 +20,9 @@ enum C {
         static let millionsOfSongs = "Millions of songs.\n Free on Spotify."
         static let login = "Login with Spotify"
         static let searchPlaceholder = "Search for an artist..."
+        static let preview = "Preview on Spotify"
+        static let find = "Find your favorites"
+        static let search = "Search for any artist you follow."
     }
     
     enum Memory {

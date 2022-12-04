@@ -9,8 +9,8 @@ import UIKit
 
 final class AlbumCellView: UIView {
     
-    private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
+    private lazy var imageView: AsyncImageView = {
+        let iv = AsyncImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.alpha = 0.6
@@ -19,27 +19,46 @@ final class AlbumCellView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 14, weight: .bold)
-        lbl.textAlignment = .center
+        lbl.font = .systemFont(ofSize: 10, weight: .bold)
+        lbl.textAlignment = .justified
         lbl.numberOfLines = 0
         return lbl
     }()
     
-    private lazy var followersLabel: UILabel = {
+    private lazy var artistsLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 12)
+        lbl.font = .systemFont(ofSize: 8, weight: .bold)
+        lbl.textAlignment = .justified
+        lbl.numberOfLines = 0
+        return lbl
+    }()
+    
+    private lazy var releaseLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = .systemFont(ofSize: 10)
         lbl.textAlignment = .justified
         return lbl
     }()
     
+    private lazy var trackLabel: UILabel = {
+        let lbl = UILabel()
+        lbl.font = .systemFont(ofSize: 10)
+        lbl.textAlignment = .justified
+        return lbl
+    }()
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layoutViews()
     }
     
     func configure(with model: AlbumModel) {
-        imageView.loadFrom(url: model.image)
+        let placeholder = UIImage(named: C.Images.placeholder)
+        imageView.setImage(model.image, placeholder: placeholder)
         nameLabel.text = model.name
+        artistsLabel.text = model.artists
+        releaseLabel.text = model.releaseYear
+        trackLabel.text = model.totalTracks
     }
     
     func resetImage() {
@@ -48,16 +67,20 @@ final class AlbumCellView: UIView {
     
     private func layoutViews() {
         imageView.place(on: self).pin(.allEdges)
-        
+
         nameLabel.place(on: self).pin(
             .leading(padding: 3),
+            .trailing(padding: 20),
             .top(padding: 3)
         )
-        let stack = UIStackView(arrangedSubviews: [followersLabel])
+        let stack = UIStackView(arrangedSubviews: [artistsLabel,
+                                                   trackLabel,
+                                                   releaseLabel])
         stack.axis = .vertical
-        stack.spacing = 3
+        stack.spacing = 1
         stack.place(on: self).pin(
             .leading(padding: 3),
+            .trailing,
             .bottom(padding: 3)
         )
     }

@@ -25,7 +25,7 @@
 		CFED7C2B2937DEB9005F30C9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */; };
 		CFED7C322937F2A9005F30C9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C312937F2A9005F30C9 /* AuthManager.swift */; };
 		CFED7C3529380162005F30C9 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C3429380162005F30C9 /* Typealias.swift */; };
-		CFED7C39293B8577005F30C9 /* SearchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C38293B8577005F30C9 /* SearchCollectionView.swift */; };
+		CFED7C39293B8577005F30C9 /* SpotifyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C38293B8577005F30C9 /* SpotifyCollectionView.swift */; };
 		CFED7C3C293B85E5005F30C9 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C3B293B85E5005F30C9 /* SearchCell.swift */; };
 		CFED7C3F293B86C4005F30C9 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C3E293B86C4005F30C9 /* CompositionalLayout.swift */; };
 		CFED7C41293B9817005F30C9 /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C40293B9817005F30C9 /* SearchCellView.swift */; };
@@ -34,7 +34,6 @@
 		CFED7C48293BB8EF005F30C9 /* SearchUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C47293BB8EF005F30C9 /* SearchUIModel.swift */; };
 		CFED7C4A293BC6BA005F30C9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C49293BC6BA005F30C9 /* ApiService.swift */; };
 		CFED7C4C293BC6D3005F30C9 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C4B293BC6D3005F30C9 /* ApiEndpoint.swift */; };
-		CFED7C4F293BCA6F005F30C9 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */; };
 		CFED7C51293BD465005F30C9 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C50293BD465005F30C9 /* AuthEndpoint.swift */; };
 		CFED7C53293BF442005F30C9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C52293BF442005F30C9 /* String+Extensions.swift */; };
 		CFED7C58293C953A005F30C9 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C57293C953A005F30C9 /* AlbumsViewController.swift */; };
@@ -43,6 +42,9 @@
 		CFED7C60293C9687005F30C9 /* AlbumCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C5F293C9687005F30C9 /* AlbumCellView.swift */; };
 		CFED7C62293C96AF005F30C9 /* AlbumUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C61293C96AF005F30C9 /* AlbumUIModel.swift */; };
 		CFED7C64293C9816005F30C9 /* AlbumsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C63293C9816005F30C9 /* AlbumsItem.swift */; };
+		CFED7C67293CC383005F30C9 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C66293CC383005F30C9 /* WelcomeView.swift */; };
+		CFED7C6A293CCA65005F30C9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C69293CCA65005F30C9 /* BaseViewController.swift */; };
+		CFED7C6F293CD646005F30C9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFED7C6E293CD646005F30C9 /* AsyncImageView.swift */; };
 		CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEF5DEC29353ABB00DED87C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,7 +70,7 @@
 		CFED7C2A2937DEB9005F30C9 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CFED7C312937F2A9005F30C9 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		CFED7C3429380162005F30C9 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
-		CFED7C38293B8577005F30C9 /* SearchCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionView.swift; sourceTree = "<group>"; };
+		CFED7C38293B8577005F30C9 /* SpotifyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCollectionView.swift; sourceTree = "<group>"; };
 		CFED7C3B293B85E5005F30C9 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		CFED7C3E293B86C4005F30C9 /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
 		CFED7C40293B9817005F30C9 /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		CFED7C47293BB8EF005F30C9 /* SearchUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUIModel.swift; sourceTree = "<group>"; };
 		CFED7C49293BC6BA005F30C9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		CFED7C4B293BC6D3005F30C9 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
-		CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		CFED7C50293BD465005F30C9 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		CFED7C52293BF442005F30C9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		CFED7C57293C953A005F30C9 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +87,9 @@
 		CFED7C5F293C9687005F30C9 /* AlbumCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellView.swift; sourceTree = "<group>"; };
 		CFED7C61293C96AF005F30C9 /* AlbumUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumUIModel.swift; sourceTree = "<group>"; };
 		CFED7C63293C9816005F30C9 /* AlbumsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsItem.swift; sourceTree = "<group>"; };
+		CFED7C66293CC383005F30C9 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CFED7C69293CCA65005F30C9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CFED7C6E293CD646005F30C9 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		CFEF5DEC29353ABB00DED87C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 			children = (
 				CFBF2D37292D4DAB00C1514E /* Supporting Files */,
 				CFED7C4D293BCA54005F30C9 /* Extensions */,
+				CFED7C6B293CD5D5005F30C9 /* CommonUI */,
 				CFBF2D38292D4DD100C1514E /* Modules */,
 				CFBF2D40292D4F6000C1514E /* Utils */,
 				CFBF2D48292D5B9800C1514E /* Services */,
@@ -270,8 +275,9 @@
 		CFED7C2C2937DEC9005F30C9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CFED7C65293CC363005F30C9 /* WelcomeView */,
 				CFED7C42293B9A78005F30C9 /* StarRatingView */,
-				CFED7C37293B855A005F30C9 /* CollectionView */,
+				CFED7C37293B855A005F30C9 /* SearchCellView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -284,13 +290,12 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
-		CFED7C37293B855A005F30C9 /* CollectionView */ = {
+		CFED7C37293B855A005F30C9 /* SearchCellView */ = {
 			isa = PBXGroup;
 			children = (
-				CFED7C38293B8577005F30C9 /* SearchCollectionView.swift */,
 				CFED7C40293B9817005F30C9 /* SearchCellView.swift */,
 			);
-			path = CollectionView;
+			path = SearchCellView;
 			sourceTree = "<group>";
 		};
 		CFED7C3A293B85BF005F30C9 /* Cell */ = {
@@ -320,7 +325,6 @@
 		CFED7C4D293BCA54005F30C9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CFED7C4E293BCA6F005F30C9 /* UIImageView+Extensions.swift */,
 				CFED7C52293BF442005F30C9 /* String+Extensions.swift */,
 			);
 			path = Extensions;
@@ -352,6 +356,48 @@
 				CFED7C5D293C9659005F30C9 /* AlbumCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CFED7C65293CC363005F30C9 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C66293CC383005F30C9 /* WelcomeView.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
+		CFED7C68293CCA54005F30C9 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C69293CCA65005F30C9 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		CFED7C6B293CD5D5005F30C9 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C6D293CD60D005F30C9 /* AsyncImageView */,
+				CFED7C6C293CD5FF005F30C9 /* SpotifyCollectionView */,
+				CFED7C68293CCA54005F30C9 /* BaseViewController */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		CFED7C6C293CD5FF005F30C9 /* SpotifyCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C38293B8577005F30C9 /* SpotifyCollectionView.swift */,
+			);
+			path = SpotifyCollectionView;
+			sourceTree = "<group>";
+		};
+		CFED7C6D293CD60D005F30C9 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				CFED7C6E293CD646005F30C9 /* AsyncImageView.swift */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		CFEF5DEB29353AAF00DED87C /* UI */ = {
@@ -436,7 +482,6 @@
 				CFED7C41293B9817005F30C9 /* SearchCellView.swift in Sources */,
 				CFED7C322937F2A9005F30C9 /* AuthManager.swift in Sources */,
 				CFBF2D42292D506A00C1514E /* AutoLayoutDSL.swift in Sources */,
-				CFED7C4F293BCA6F005F30C9 /* UIImageView+Extensions.swift in Sources */,
 				CFED7C4C293BC6D3005F30C9 /* ApiEndpoint.swift in Sources */,
 				CFED7C60293C9687005F30C9 /* AlbumCellView.swift in Sources */,
 				CFED7C48293BB8EF005F30C9 /* SearchUIModel.swift in Sources */,
@@ -444,9 +489,11 @@
 				CFEF5DED29353ABB00DED87C /* LoginView.swift in Sources */,
 				CFED7C292937DEAD005F30C9 /* SearchViewController.swift in Sources */,
 				CFED7C51293BD465005F30C9 /* AuthEndpoint.swift in Sources */,
+				CFED7C6A293CCA65005F30C9 /* BaseViewController.swift in Sources */,
 				CFED7C262936A891005F30C9 /* AuthResponse.swift in Sources */,
 				CFED7C2B2937DEB9005F30C9 /* SearchViewModel.swift in Sources */,
 				CFED7C64293C9816005F30C9 /* AlbumsItem.swift in Sources */,
+				CFED7C6F293CD646005F30C9 /* AsyncImageView.swift in Sources */,
 				CFBF2D53292D5D9700C1514E /* RequestError.swift in Sources */,
 				CFBF2D4F292D5C3900C1514E /* ImageCache.swift in Sources */,
 				CFBF2D28292D4BFC00C1514E /* LoginViewController.swift in Sources */,
@@ -461,9 +508,10 @@
 				CFED7C46293BA158005F30C9 /* ArtistsItem.swift in Sources */,
 				CFED7C3F293B86C4005F30C9 /* CompositionalLayout.swift in Sources */,
 				CFBF2D24292D4BFC00C1514E /* AppDelegate.swift in Sources */,
-				CFED7C39293B8577005F30C9 /* SearchCollectionView.swift in Sources */,
+				CFED7C39293B8577005F30C9 /* SpotifyCollectionView.swift in Sources */,
 				CFED7C53293BF442005F30C9 /* String+Extensions.swift in Sources */,
 				CFED7C5E293C9659005F30C9 /* AlbumCell.swift in Sources */,
+				CFED7C67293CC383005F30C9 /* WelcomeView.swift in Sources */,
 				CFBF2D4D292D5C1800C1514E /* ImageLoader.swift in Sources */,
 				CFBF2D55292D5DA000C1514E /* Endpoint.swift in Sources */,
 				CFBF2D26292D4BFC00C1514E /* SceneDelegate.swift in Sources */,

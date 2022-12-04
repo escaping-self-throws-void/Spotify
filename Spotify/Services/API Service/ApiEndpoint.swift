@@ -16,7 +16,7 @@ extension ApiEndpoint: Endpoint {
     var path: String {
         switch self {
         case .artists(let name, _):
-            return "/search?q=artist=\(name)&type=artist"
+            return "/search?q=\(name)&type=artist"
         case .albums(let id, _):
             return "/artists/\(id)/albums"
         }

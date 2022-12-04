@@ -8,14 +8,16 @@
 import UIKit
 import Combine
 
-final class SearchViewController: UIViewController {
+final class SearchViewController: BaseViewController {
     
     private let viewModel: SearchViewModel
-
+    
     private let collectionView = SpotifyCollectionView()
     
+    private let welcomeView = WelcomeView()
+    
     private lazy var dataSource = configureDataSource()
-
+    
     private var cancellables = Set<AnyCancellable>()
     
     init(_ viewModel: SearchViewModel) {
@@ -42,6 +44,19 @@ final class SearchViewController: UIViewController {
         collectionView.delegate = self
         bindViewModel()
     }
+    
+    private func layoutViews() {
+        welcomeView.place(on: view).pin(
+            .centerX,
+            .centerY
+        )
+        collectionView.place(on: view).pin(
+            .leading,
+            .trailing,
+            .bottom(to: view.safeAreaLayoutGuide, .bottom),
+            .top(to: view.safeAreaLayoutGuide, .top)
+        )
+    }
 }
 
 // MARK: - Private methods
@@ -54,27 +69,24 @@ extension SearchViewController {
         navigationItem.titleView = searchBar
     }
     
-    private func layoutViews() {
-        collectionView.place(on: view).pin(
-            .leading,
-            .trailing,
-            .bottom(to: view.safeAreaLayoutGuide, .bottom),
-            .top(to: view.safeAreaLayoutGuide, .top)
-        )
-    }
-    
     private func bindViewModel() {
         viewModel.refresh
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in
+                self?.welcomeView.isHidden = true
                 self?.createSnapshot()
             }
             .store(in: &cancellables)
     }
-    
-    private func openAlbumsScreen(_ id: String) {
+}
+
+// MARK: - Actions
+extension SearchViewController {
+    private func openAlbumsScreen(_ id: String, title: String) {
         let vm = AlbumsViewModelImpl(service: ApiService(), id: id)
         let vc = AlbumsViewController(vm)
+        vc.title = title
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -96,16 +108,15 @@ extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         guard let artist = dataSource.itemIdentifier(for: indexPath) else { return }
-        openAlbumsScreen(artist.id)
+        openAlbumsScreen(artist.id, title: artist.name)
     }
 }
 
 // MARK: - Diffable Data Source Setup
 extension SearchViewController {
-    
     fileprivate typealias SearchDataSource = UICollectionViewDiffableDataSource<Section, ArtistModel>
     fileprivate typealias SearchSnapshot = NSDiffableDataSourceSnapshot<Section, ArtistModel>
-
+    
     fileprivate enum Section {
         case main
     }
@@ -123,8 +134,7 @@ extension SearchViewController {
     private func createSnapshot() {
         var snapshot = SearchSnapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(viewModel.artists)
-        
+        snapshot.appendItems(viewModel.artists, toSection: .main)
         dataSource.apply(snapshot)
     }
 }

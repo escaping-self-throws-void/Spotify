@@ -9,8 +9,8 @@ import UIKit
 
 final class SearchCellView: UIView {
     
-    private lazy var imageView: UIImageView = {
-        let iv = UIImageView()
+    private lazy var imageView: AsyncImageView = {
+        let iv = AsyncImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.alpha = 0.6
@@ -19,8 +19,8 @@ final class SearchCellView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 14, weight: .bold)
-        lbl.textAlignment = .center
+        lbl.font = .systemFont(ofSize: 12, weight: .bold)
+        lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
     }()
@@ -40,7 +40,8 @@ final class SearchCellView: UIView {
     }
     
     func configure(with model: ArtistModel) {
-        imageView.loadFrom(url: model.image)
+        let placeholder = UIImage(named: C.Images.placeholder)
+        imageView.setImage(model.image, placeholder: placeholder)
         nameLabel.text = model.name
         followersLabel.text = model.followers
         ratingView.rating = model.rating
@@ -55,6 +56,7 @@ final class SearchCellView: UIView {
         
         nameLabel.place(on: self).pin(
             .leading(padding: 3),
+            .trailing(padding: 20),
             .top(padding: 3)
         )
         let stack = UIStackView(arrangedSubviews: [ratingView, followersLabel])

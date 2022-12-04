@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-final class WebViewController: UIViewController {
+final class WebViewController: BaseViewController {
     
     private lazy var webView: WKWebView = {
         let prefs = WKWebpagePreferences()

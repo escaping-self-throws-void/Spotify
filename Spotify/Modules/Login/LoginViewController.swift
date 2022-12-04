@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
     
     private let loginView = LoginView()
     
@@ -25,6 +25,15 @@ final class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Private methods
+extension LoginViewController {
+    private func handleCompletion() {
+        let vm = SearchViewModelImpl(service: ApiService())
+        let vc = SearchViewController(vm)
+        navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
 // MARK: - Actions
 extension LoginViewController {
     private func loginPressed() {
@@ -32,14 +41,5 @@ extension LoginViewController {
         
         let vc = WebViewController(url: url, completionHandler: handleCompletion)
         present(vc, animated: true)
-    }
-}
-
-// MARK: - Private methods
-extension LoginViewController {
-    private func handleCompletion() {
-        let vm = SearchViewModelImpl(service: ApiService())
-        let vc = SearchViewController(vm)
-        navigationController?.pushViewController(vc, animated: false)
     }
 }

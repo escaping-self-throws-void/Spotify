@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class AlbumsViewController: UIViewController {
+final class AlbumsViewController: BaseViewController {
     
     private let viewModel: AlbumsViewModel
 
@@ -38,16 +38,9 @@ final class AlbumsViewController: UIViewController {
     }
     
     private func initialize() {
-        setupNavigationBar()
-        collectionView.delegate = self
+        navigationController?.navigationBar.tintColor = .white
         bindViewModel()
-    }
-}
-
-// MARK: - Private methods
-extension AlbumsViewController {
-    private func setupNavigationBar() {
-
+        viewModel.getAlbums()
     }
     
     private func layoutViews() {
@@ -58,7 +51,10 @@ extension AlbumsViewController {
             .top(to: view.safeAreaLayoutGuide, .top)
         )
     }
-    
+}
+
+// MARK: - Private methods
+extension AlbumsViewController {
     private func bindViewModel() {
         viewModel.refresh
             .receive(on: RunLoop.main)
@@ -69,10 +65,12 @@ extension AlbumsViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension AlbumsViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+// MARK: - Actions {
+extension AlbumsViewController {
+    private func openExternalUrl(_ stringUrl: String) {
+        guard let url = URL(string: stringUrl) else { return }
+        let vc = WebViewController(url: url)
+        present(vc, animated: true)
     }
 }
 
@@ -87,8 +85,9 @@ extension AlbumsViewController {
     }
     
     private func configureDataSource() -> AlbumsDataSource {
-        let cellRegistration = UICollectionView.CellRegistration<AlbumCell, AlbumModel> { cell, _, model in
+        let cellRegistration = UICollectionView.CellRegistration<AlbumCell, AlbumModel> { [weak self] cell, _, model in
             cell.configure(with: model)
+            cell.onButtonClick = self?.openExternalUrl(_:)
         }
         
         return AlbumsDataSource(collectionView: collectionView) { collectionView, indexPath, itemIdentifier in
@@ -99,9 +98,7 @@ extension AlbumsViewController {
     private func createSnapshot() {
         var snapshot = AlbumsSnapshot()
         snapshot.appendSections([.main])
-        snapshot.appendItems(viewModel.albums)
-        
+        snapshot.appendItems(viewModel.albums, toSection: .main)
         dataSource.apply(snapshot)
     }
 }
-

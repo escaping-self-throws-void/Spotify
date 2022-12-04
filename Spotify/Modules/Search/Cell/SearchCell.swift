@@ -19,6 +19,7 @@ final class SearchCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         searchView.resetImage()
+        contentView.subviews.forEach { $0.removeFromSuperview() }
     }
     
     func configure(with model: ArtistModel) {

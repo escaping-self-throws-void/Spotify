@@ -26,7 +26,7 @@ struct AlbumModel: Hashable {
     
     init(with model: AlbumsItem) {
         id = model.id
-        artists = model.artists.map { $0.name }.joined()
+        artists = model.artists.map { $0.name }.joined(separator: ", ")
         image = model.images.first?.url ?? ""
         name = model.name
         releaseYear = "\(model.releaseDate.prefix(4)) year"

@@ -38,13 +38,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func configureUI() {
         let navigationBarAppearance = UINavigationBarAppearance()
-         navigationBarAppearance.configureWithOpaqueBackground()
-         navigationBarAppearance.titleTextAttributes = [
-             .foregroundColor : UIColor.white
-         ]
-         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
-         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor : UIColor.white
+        ]
+        navigationBarAppearance.shadowColor = .clear
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
     }
 }
 

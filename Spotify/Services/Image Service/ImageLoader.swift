@@ -16,12 +16,13 @@ actor ImageLoader {
     private init() {}
 
     func downloadImage(from link: String) async throws -> UIImage {
-        if let cachedImage = imageCache.getImage(forKey: link) {
-            return cachedImage
-        }
-        
         guard let url = URL(string: link) else {
             throw RequestError.invalidURL
+        }
+        
+        if let cachedImage = imageCache.getImage(forKey: url.lastPathComponent) {
+            debugPrint("Image from cache: ", url.lastPathComponent)
+            return cachedImage
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -39,8 +40,9 @@ actor ImageLoader {
             throw RequestError.unknown
         }
 
-        imageCache.saveImage(image, forKey: link)
+        imageCache.saveImage(image, forKey: url.lastPathComponent)
         
+        debugPrint("Image from network: ", url.lastPathComponent)
         return image
     }
 }

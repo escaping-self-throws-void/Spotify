@@ -17,6 +17,7 @@ protocol AlbumsViewModel {
 final class AlbumsViewModelImpl: AlbumsViewModel {
     private(set) var refresh = PassthroughSubject<Bool, Never>()
     private(set) var albums = [AlbumModel]()
+    
     private let id: String
     private let service: ApiServiceProtocol
     
