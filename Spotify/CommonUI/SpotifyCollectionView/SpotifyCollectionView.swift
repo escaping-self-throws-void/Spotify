@@ -18,17 +18,17 @@ final class SpotifyCollectionView: UICollectionView {
                 
         let portraitGroup = CompositionalLayout.createGroup(alignment: .horizontal,
                                                             width: .fractionalWidth(1),
-                                                            height: .fractionalHeight(0.45),
+                                                            height: .fractionalHeight(0.5),
                                                             item: item, count: 2)
         
         let landscapeGroup = CompositionalLayout.createGroup(alignment: .horizontal,
                                                      width: .fractionalWidth(1),
-                                                     height: .fractionalHeight(0.55),
+                                                     height: .fractionalHeight(0.5),
                                                      items: [vGroup, vGroup])
         
         let mainGroup = CompositionalLayout.createGroup(alignment: .vertical,
                                                         width: .fractionalWidth(1),
-                                                        height: .fractionalHeight(0.6),
+                                                        height: .fractionalHeight(0.8),
                                                         items: [portraitGroup, landscapeGroup])
         
         let section = NSCollectionLayoutSection(group: mainGroup)
